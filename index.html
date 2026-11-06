@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PadelUniverse | Il tuo universo del padel</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f7f6; color: #18241e; }
+    header { background: #10281e; color: white; padding: 22px 7%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .logo { font-size: 25px; font-weight: 900; }
+    .logo span { color: #b5ff45; }
+    nav a { color: white; text-decoration: none; margin-left: 16px; }
+    .hero { background: linear-gradient(125deg,#10281e,#285a3d); color: white; padding: 95px 8%; text-align: center; }
+    .hero h1 { font-size: clamp(36px,6vw,64px); margin: 0 0 15px; }
+    .hero p { font-size: 20px; }
+    .btn { display: inline-block; background: #b5ff45; color: #10281e; padding: 15px 28px; border-radius: 8px; font-weight: bold; text-decoration: none; border: none; cursor: pointer; }
+    section { padding: 55px 7%; }
+    h2 { text-align: center; font-size: 32px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 22px; }
+    .card { background: white; padding: 22px; border-radius: 14px; text-align: center; box-shadow: 0 5px 20px #00000010; }
+    .picture { font-size: 70px; padding: 25px; background: #e9f3e5; border-radius: 12px; }
+    .price { font-size: 23px; font-weight: bold; color: #23643c; }
+    .card button { background: #10281e; color: white; border: 0; padding: 12px 18px; border-radius: 8px; cursor: pointer; }
+    .about { background: #e4efdf; text-align: center; }
+    footer { background: #10281e; color: white; text-align: center; padding: 35px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">PADEL<span>UNIVERSE</span> 🎾</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#prodotti">Prodotti</a>
+      <a href="#chisiamo">Chi siamo</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <div class="hero" id="home">
+    <h1>IL TUO UNIVERSO DEL PADEL</h1>
+    <p>Passione, energia e attrezzatura per ogni partita.</p>
+    <a href="#prodotti" class="btn">SCOPRI I PRODOTTI</a>
+  </div>
+
+  <section id="prodotti">
+    <h2>I nostri prodotti 🎾</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="picture">🎾</div>
+        <h3>Racchetta Pro</h3>
+        <p>Potenza e controllo per ogni colpo.</p>
+        <p class="price">€129,99</p>
+        <button onclick="aggiungi('Racchetta Pro')">Aggiungi al carrello</button>
+      </div>
+      <div class="card">
+        <div class="picture">🟡</div>
+        <h3>Palline Padel</h3>
+        <p>Set da 3 palline professionali.</p>
+        <p class="price">€7,99</p>
+        <button onclick="aggiungi('Palline Padel')">Aggiungi al carrello</button>
+      </div>
+      <div class="card">
+        <div class="picture">👟</div>
+        <h3>Scarpe Padel</h3>
+        <p>Comfort e aderenza in campo.</p>
+        <p class="price">€89,99</p>
+        <button onclick="aggiungi('Scarpe Padel')">Aggiungi al carrello</button>
+      </div>
+      <div class="card">
+        <div class="picture">🎒</div>
+        <h3>Borsa Sportiva</h3>
+        <p>Spazio per tutta la tua attrezzatura.</p>
+        <p class="price">€49,99</p>
+        <button onclick="aggiungi('Borsa Sportiva')">Aggiungi al carrello</button>
+      </div>
+    </div>
+    <p style="text-align:center">🛒 Articoli nel carrello: <strong id="carrello">0</strong></p>
+  </section>
+
+  <section class="about" id="chisiamo">
+    <h2>Chi siamo</h2>
+    <p>PadelUniverse nasce dalla passione per il padel.
+    Offriamo articoli sportivi per principianti e professionisti.</p>
+  </section>
+
+  <section id="contatti" style="text-align:center">
+    <h2>Contattaci</h2>
+    <p>Hai domande sui nostri prodotti? Seguici per scoprire tutte le novità!</p>
+  </section>
+
+  <footer>
+    <p>© 2026 PadelUniverse - Il tuo universo del padel</p>
+    <p>Negozio dimostrativo - Nessun acquisto reale</p>
+  </footer>
+
+  <script>
+    let totale = 0;
+    function aggiungi(prodotto) {
+      totale++;
+      document.getElementById("carrello").textContent = totale;
+      alert(prodotto + " aggiunto al carrello!");
+    }
+  </script>
+</body>
+</html>
